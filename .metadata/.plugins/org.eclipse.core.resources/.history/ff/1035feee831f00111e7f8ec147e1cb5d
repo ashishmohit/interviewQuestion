@@ -1,0 +1,9 @@
+import org.testng.annotations.Test;
+
+public class Ashish {
+	@Test
+	public void y (){
+		System.out.println("Test");
+		
+	}
+}

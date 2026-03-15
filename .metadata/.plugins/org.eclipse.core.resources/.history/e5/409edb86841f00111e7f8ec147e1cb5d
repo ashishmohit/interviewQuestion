@@ -1,0 +1,11 @@
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+public class Ashish {
+	@Test
+	public void y (){
+		System.out.println("Test");
+		RestAssured.baseURI = "";
+	}
+}

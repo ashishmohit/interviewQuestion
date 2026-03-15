@@ -1,0 +1,40 @@
+package Ashish.Ashish;
+
+import org.testng.ITestContext;
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+public class Ashish {
+
+	@Test (priority = 2,invocationCount = 2)
+	public void y (ITestContext context){
+		context.setAttribute("token", "12345");
+		System.out.println("Test");
+		RestAssured.baseURI = "http://localhost:3000";
+	String  employeePath =	RestAssured.given().queryParam("id", 101)
+		.when().get("/employees").then().extract().response().asString();
+	System.out.println(employeePath);
+		
+		
+		
+	}
+	
+	@Test (priority = 1,expectedExceptions = ArithmeticException.class,alwaysRun = true)
+	public void z (ITestContext context) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\HP\\Downloads\\chromedriver-win64 (8)\\chromedriver-win64\\chromedriver.exe");
+		
+		System.out.println(context.getAttribute("token"));
+				WebDriver driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.get("https://rahulshettyacademy.com/upload-download-test/");
+				System.out.println(driver.getTitle());
+				Thread.sleep(2000);
+				driver.close();
+		
+	}
+}

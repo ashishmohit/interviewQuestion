@@ -1,0 +1,17 @@
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+public class Ashish {
+	@Test
+	public void y (){
+		System.out.println("Test");
+		RestAssured.baseURI = "http://localhost:3000";
+	String  employeePath =	RestAssured.given().pathParam("x", "/employees").queryParam("id", 101)
+		.when().get("/{x}").then().extract().response().asString();
+	System.out.println(employeePath);
+		
+		
+		
+	}
+}

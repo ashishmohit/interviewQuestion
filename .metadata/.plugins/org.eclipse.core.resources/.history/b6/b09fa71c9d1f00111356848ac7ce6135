@@ -1,0 +1,76 @@
+package Ashish.Ashish;
+
+import org.testng.ITestContext;
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.filter.cookie.CookieFilter;
+import io.restassured.filter.session.SessionFilter;
+import io.restassured.response.Response;
+
+public class Ashish {
+
+//	@Test (priority = 1,invocationCount = 2,enabled = false)
+//	public void y (ITestContext context){
+//		context.setAttribute("token", "12345");
+//		System.out.println("Test");
+//		RestAssured.baseURI = "http://localhost:3000";
+//	String  employeePath =	RestAssured.given().queryParam("id", 101)
+//		.when().get("/employees").then().extract().response().asString();
+//	System.out.println(employeePath);
+//		
+//		
+//		
+//	}
+//	
+//	@Test (priority = 2,alwaysRun = true,enabled = false)
+//	public void z (ITestContext context) throws InterruptedException {
+//		System.setProperty("webdriver.chrome.driver",
+//				"C:\\Users\\HP\\Downloads\\chromedriver-win64 (8)\\chromedriver-win64\\chromedriver.exe");
+//		
+//		System.out.println(context.getAttribute("token"));
+//				WebDriver driver = new ChromeDriver();
+//				driver.manage().window().maximize();
+//				driver.get("https://rahulshettyacademy.com/upload-download-test/");
+//				System.out.println(driver.getTitle());
+//				Thread.sleep(2000);
+//				driver.close();
+//		
+//	}
+//	@Test
+//	public void cookies1(){
+//		//RestAssured.baseURI ="https://www.google.com/";
+//		
+//		//Response y = RestAssured.given().get("https://www.google.com/");
+//		//CookieFilter x1 = new CookieFilter();
+//		SessionFilter session = new SessionFilter();
+//		
+//		Response x = RestAssured.given().filter(session).header("Content-Type","text/html; charset=ISO-8859-1").headers("Server", "gws")
+//				//.header("Content-Type","application/json")
+//				.header("Content-Encoding", "gzip").when().get("https://www.google.com/").then()
+//				//.cookie("AEC", "AaJma5uAMY7bHxX1JYZ8kx_iXkI1EcI9uv4LyHryolJ6qCXexMrJPnfH9Zw")
+//	//.cookie("NID","529%3DR_5-AhrmZL_Fpz-z6DOjUufxuNKUbuei2Kzl-2SfXCRrkK6-oujNk7YrAI__2rs28JSVK-VV97zhq33zT6kVfdW1YnpFHJMLPB9fvDUb4C2VbOZRoNkfWi-I5tIq_NAEtjda1b2SvJtP-h8m4D0a4ys82hX0HPQ1WsbW4plh4j6883h8ntUHcXUrrLoVgntlAk-pXOBmC8dFCoAZIW82qJmVn15h6pxN0Q")
+//	.extract().response();
+//	//System.out.println(x.getStatusCode() +" "+x.getCookie("AEC")+" "+x.getCookie("NID"));
+//	
+//	Response newreq = RestAssured.given().filter(session).header("Content-Type","text/html; charset=ISO-8859-1").headers("Server", "gws").header("Content-Encoding", "gzip").when().get("https://www.google.com/")
+//			.then().extract().response();
+//	String z = x.getCookie("AEC");
+//	System.out.println(z);
+//	String z1 = newreq.getCookie("AEC");
+//	System.out.println(z1);
+//	}
+//	
+	@Test
+	public void Schema(){
+		Response x = RestAssured.given()
+				//.header("Content-Type","application/json")
+				.when().get("https://httpbin.org/#/Cookies/get_cookies").then()
+				.extract().response();
+		System.out.println("i love yopu" +" "+x.toString());
+		
+	}
+}
